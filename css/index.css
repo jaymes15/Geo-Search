@@ -37,3 +37,22 @@ header{
 	color: white;
 
 }
+
+.flex-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map{
+	font-size:200px;
+	color:red;
+	margin-left: 90px;
+    margin-right: 90px;
+}
+
+.about h3{
+	font-family: 'Lucida Sans Unicode', sans-serif;
+	font-size: 30px;
+}

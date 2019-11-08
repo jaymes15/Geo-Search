@@ -1,1 +1,39 @@
-index.css
+header{
+	color:green;
+	font-family:'Lucida Sans Unicode', sans-serif;
+	padding-left: 10px; 
+}
+.icon{
+	color:red;
+}
+
+#search{
+	background-image:url(../image/map-local.jpg);
+	background-repeat:   no-repeat;
+	background-image-size:cover;
+	background-attachment: fixed;
+	height:290px;
+}
+
+.search-text{
+	margin-left: 250px;
+	margin-top: 80px;
+	width: 50%;
+	height: 50px;
+	border:none;
+	padding-left:10px;
+	font-family: 'Lucida Sans Unicode', sans-serif;
+
+}
+
+.searchbtn{
+	margin-left: 250px;
+	margin-top: 10px;
+	width: 50.5%;
+	height: 50px;
+	border:none;
+	font-family: 'Lucida Sans Unicode', sans-serif;
+	background-color: black;
+	color: white;
+
+}

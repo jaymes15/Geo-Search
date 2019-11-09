@@ -56,3 +56,49 @@ header{
 	font-family: 'Lucida Sans Unicode', sans-serif;
 	font-size: 30px;
 }
+
+#search-result{
+  display: flex;
+  justify-content: space-between;
+  margin:90px; 
+  line-height: 1em;
+  color:grey;
+  font-family: arial,sans-serif;
+  font-size: 18px;
+
+}
+
+
+
+#temperature{
+	font-size:90px;
+	margin-top: 30px;
+}
+
+.therm{
+	color: orange;
+	padding-right: 30px;
+}
+
+.landmarks{
+  display: flex;
+  justify-content: space-around;
+  color:grey;
+  font-family: 'Lucida Sans Unicode',sans-serif;
+  
+}
+
+.img{
+	width:300px;
+	height:200px;
+}
+
+.intro{
+margin-left: 50px;	
+  color:grey;
+  font-family: 'Lucida Sans Unicode',sans-serif;
+  
+}
+
+
+

@@ -61,7 +61,7 @@ header{
   display: flex;
   justify-content: space-between;
   margin:90px; 
-  line-height: 1em;
+  line-height: 1.5em;
   color:grey;
   font-family: arial,sans-serif;
   font-size: 18px;

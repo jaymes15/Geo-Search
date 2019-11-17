@@ -26,4 +26,11 @@ function GetMap() {
     mapTypeId: Microsoft.Maps.MapTypeId.aerial,
     zoom: 10,
   });
+  let center = map.getCenter();
+  let pin = new Microsoft.Maps.Pushpin(center, {
+    title: 'search result',
+    subTitle: 'City Center',
+    text: '1',
+  });
+  map.entities.push(pin);
 }

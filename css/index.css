@@ -100,9 +100,17 @@ margin-left: 50px;
   
 }
 
-#myMap{
-		position:relative;
-		width:600px;
-		height:400px;"
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
 }
+
+
 

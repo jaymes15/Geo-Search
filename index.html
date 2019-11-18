@@ -15,7 +15,7 @@
 			</header>
 			<div id = 'search'>
 			    <input type="text" id="search-text" placeholder="search for a place..." > 
-				<input type="submit" value="Find a place" class='searchbtn' onclick="geocodeString()">
+				<button type="submit"  class='searchbtn' onclick='geocodeString()'> Find a place </button>
 			</div>	
 			<div class="flex-container">
 				<div ><i class="fas fa-map-marked-alt map"></i></div>
@@ -25,15 +25,15 @@
 			</div>
 			<div id='search-result'>
 				<div class='search-result1'>
-					<h3>Surulere</h3>
-					<h3>Saturday</h3>
-					<h3>Scattered Thunderstorms</h3>
-					<h3 id='temperature'><i class="fas fa-thermometer-three-quarters therm"></i>32 <sup >C|F</sup> </h3>
+					<h3 id='placename'></h3>
+					<h3></h3>
+					<h3 id='weathercondition'></h3>
+					<h3 id='temperature'>  </h3>
 				</div>
 				<div class='search-result2'>
-						<h4>Precipitation:50%</h4>
-						<h4>Humidity:77%</h4>
-						<h4>Wind:11km/h</h4>
+						<h4><h4>
+						<h4 id='humidity'></h4>
+						<h4 id='windspeed'></h4>
 							
 				</div>
 				
@@ -46,7 +46,7 @@
 	            <div><img src="image/Tafawa-Balewa-Square.jpg" class='img'><h6>Tafawa Balewa Square</h6></div>
             </div>
             <center>
-                     <div id="myMap" ></div>
+                     <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
             </center>        
 		</body>	
 </html>

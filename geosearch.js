@@ -14,8 +14,9 @@ function geocodeString() {
   $.get('https://api.opencagedata.com/geocode/v1/json?q=' + searchtext + '&key=0dd5cc6ce0734c178fb21b728ad0711f', function (data, status) {
     cityLat = data.results[0].geometry.lat;
     cityLog = data.results[0].geometry.lng;
-    alert('request successful,please scroll down to view your result');
     GetMap();
+    displayWeatherCondition();
+    alert('request successful,please scroll down to view your result');
   });
 }
 
@@ -33,4 +34,19 @@ function GetMap() {
     text: '1',
   });
   map.entities.push(pin);
+}
+
+function displayWeatherCondition() {
+  $.get(`https://api.openweathermap.org/data/2.5/weather?lat=${cityLat}&lon=${cityLog}&APPID=58aa1cc0f3d6ef06ce61b881bd643c57`, function (data, status) {
+    let temperature = document.getElementById('temperature');
+    temperature.textContent = data.main.temp;
+    let weatherCondition = document.getElementById('weathercondition');
+    weatherCondition.textContent = data.weather[0].description;
+    let windSpeed = document.getElementById('windspeed');
+    windSpeed.textContent = `Wind speed:${data.wind.speed}mph`;
+    let humidity = document.getElementById('humidity');
+    humidity.textContent = `Humidity:${data.main.humidity}%`;
+    let placeName = document.getElementById('placename');
+    placeName.textContent = data.name;
+  });
 }

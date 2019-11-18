@@ -6,8 +6,17 @@
 /* eslint-disable  prefer-const */
 /* eslint-disable  no-use-before-define */
 /* eslint-disable   no-undef */
+/* eslint-disable  no-mixed-operators */
 let cityLog;
 let cityLat;
+let buttons;
+let temperature;
+let weatherCondition;
+let windSpeed;
+let humidity;
+let placeName;
+let tem;
+let temp;
 function geocodeString() {
   let searchtext = document.getElementById('search-text').value;
   // eslint-disable-next-line prefer-template
@@ -38,15 +47,55 @@ function GetMap() {
 
 function displayWeatherCondition() {
   $.get(`https://api.openweathermap.org/data/2.5/weather?lat=${cityLat}&lon=${cityLog}&APPID=58aa1cc0f3d6ef06ce61b881bd643c57`, function (data, status) {
-    let temperature = document.getElementById('temperature');
-    temperature.textContent = data.main.temp;
-    let weatherCondition = document.getElementById('weathercondition');
+    temperature = document.getElementById('temperature');
+    temperature.textContent = `${data.main.temp}K`;
+    tem = `${data.main.temp}K`;
+    temp = data.main.temp;
+    weatherCondition = document.getElementById('weathercondition');
     weatherCondition.textContent = data.weather[0].description;
-    let windSpeed = document.getElementById('windspeed');
+    windSpeed = document.getElementById('windspeed');
     windSpeed.textContent = `Wind speed:${data.wind.speed}mph`;
-    let humidity = document.getElementById('humidity');
+    humidity = document.getElementById('humidity');
     humidity.textContent = `Humidity:${data.main.humidity}%`;
-    let placeName = document.getElementById('placename');
+    placeName = document.getElementById('placename');
     placeName.textContent = data.name;
+    buttons = document.getElementById('button');
+    buttons.innerHTML = '<button class="button" onclick="temperatureToKelvin()">Kelvin</button><button class="button" onclick="temperatureToCelsius()">Celsius</button><button class="button" onclick="temperatureToFahrenheit()">Fahrenheit</button>';
   });
+}
+
+function temperatureToKelvin() {
+  temperature.textContent = tem;
+}
+
+function temperatureToCelsius() {
+  let checkKelvin = tem.search('K');
+  let checkFanheriet = tem.search('F');
+  if (checkKelvin !== -1) {
+    let kelvin = temp - 273.15;
+    temperature.textContent = `${kelvin.toFixed(2)}C`;
+  } else if (checkFanheriet !== -1) {
+    let convertFanheriet = (temp - 273.15) * 9 / 5 + 32;
+    let fanheriet = (convertFanheriet - 32) * 5 / 9;
+    temperature.textContent = `${fanheriet.toFixed(2)}C`;
+  } else {
+    let kelvin = temp - 273.15;
+    temperature.textContent = `${kelvin.toFixed(2)}C`;
+  }
+}
+
+function temperatureToFahrenheit() {
+  let checkKelvin = tem.search('K');
+  let checkCelsius = tem.search('C');
+  if (checkKelvin !== -1) {
+    let fanheriet = (temp - 273.15) * 9 / 5 + 32;
+    temperature.textContent = `${fanheriet.toFixed(2)}F`;
+  } else if (checkCelsius !== -1) {
+    let convertCelsius = temp - 273.15;
+    let fanheriet = (convertCelsius * 9 / 5) + 32;
+    temperature.textContent = `${fanheriet.toFixed(2)}F`;
+  } else {
+    let fanheriet = (temp - 273.15) * 9 / 5 + 32;
+    temperature.textContent = `${fanheriet.toFixed(2)}F`;
+  }
 }

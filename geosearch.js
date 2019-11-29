@@ -99,3 +99,8 @@ function temperatureToFahrenheit() {
     temperature.textContent = `${fanheriet.toFixed(2)}F`;
   }
 }
+
+function activatePlacesSearch(){
+  let searchtext = document.getElementById('search-text');
+  let autocomplete = new google.maps.places.Autocomplete(searchtext);
+}

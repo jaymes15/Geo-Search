@@ -4,10 +4,6 @@
 			<meta charset="utf-8">
 			<title>Geo-Search</title>
 				<link  type="text/css"  rel="stylesheet" href="css/index.css">
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-				<script src="geosearch.js" type="text/javascript"></script>
-				<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=At4QSgi-CtS2RzIw1jTVBh7m-26b57Q_81HMxgDh1PSzcEXIzDLOylbG6iSGzdQd' async defer></script>
-				<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		</head>
 		<body>
 			<header>
@@ -21,7 +17,9 @@
 				<div ><i class="fas fa-map-marked-alt map"></i></div>
 				<div class='about'>
 					<h3>Geo-Search is a tool that allows people to search for places and extract information such a stimezone, map and local weather conditions like temperature, wind speed, humidity, and precipitation.</h3>
+					<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fjaymes15.github.io%2FGeo-Search%2F&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 				</div>
+
 			</div>
 			<div id='search-result'>
 				<div class='search-result1'>
@@ -49,6 +47,11 @@
             </div>
             <center>
                      <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
-            </center>        
+            </center>  
+            	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<script src="geosearch.js" type="text/javascript"></script>
+				<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=At4QSgi-CtS2RzIw1jTVBh7m-26b57Q_81HMxgDh1PSzcEXIzDLOylbG6iSGzdQd' async defer></script>
+				<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+				<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2p2PWiV226fK7CNWU1pLsvz8bp6xjUxk&libraries=places&callback=activatePlacesSearch"></script>      
 		</body>	
 </html>
